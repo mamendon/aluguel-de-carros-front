@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Cadastro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (ngSubmit)="onSubmit()">
+    <ion-list>
+      <ion-item>
+        <ion-label position="stacked">Nome</ion-label>
+        <ion-input type="text" [(ngModel)]="formData.nome" name="nome" required></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label position="stacked">CPF</ion-label>
+        <ion-input type="text" [(ngModel)]="formData.cpf" name="cpf" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">E-mail</ion-label>
+        <ion-input type="email" [(ngModel)]="formData.email" name="email" required></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label position="stacked">Telefone</ion-label>
+        <ion-input type="tel" [(ngModel)]="formData.telefone" name="telefone" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Logradouro</ion-label>
+        <ion-input type="text" [(ngModel)]="formData.logradouro" name="logradouro" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Número</ion-label>
+        <ion-input type="text" [(ngModel)]="formData.numero" name="numero" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Complemento</ion-label>
+        <ion-input type="text" [(ngModel)]="formData.complemento" name="complemento"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Bairro</ion-label>
+        <ion-input type="text" [(ngModel)]="formData.bairro" name="bairro" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">CEP</ion-label>
+        <ion-input type="text" [(ngModel)]="formData.cep" name="cep" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Cidade</ion-label>
+        <ion-input type="text" [(ngModel)]="formData.cidade" name="cidade" required></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-button expand="full" type="submit">Cadastrar</ion-button>
+  </form>
+
+  <ion-text color="danger" *ngIf="errorMessage">
+    <p>{{ errorMessage }}</p>
+  </ion-text>
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "AluguelDeCarrosFront",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

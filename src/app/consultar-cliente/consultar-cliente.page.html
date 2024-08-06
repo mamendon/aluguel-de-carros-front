@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Consultar Cliente</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let cliente of clientes">
+      <ion-label>
+        <h2>{{ cliente.nome }}</h2>
+        <p>CPF: {{ cliente.cpf }}</p>
+        <p *ngIf="cliente.email">E-mail: {{ cliente.email }}</p>
+        <p *ngIf="cliente.telefone">Telefone: {{ cliente.telefone }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-text color="danger" *ngIf="errorMessage">
+    <p>{{ errorMessage }}</p>
+  </ion-text>
+
+  <ion-button (click)="previousPage()" [disabled]="currentPage === 0">
+    Anterior
+  </ion-button>
+  <ion-button (click)="nextPage()" [disabled]="currentPage >= totalPages - 1">
+    Próxima
+  </ion-button>
+</ion-content>
